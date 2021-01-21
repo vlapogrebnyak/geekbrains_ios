@@ -68,3 +68,31 @@ for (index,fibNum) in fibonacciArray.enumerated() {
 }
 
 
+// 6) заполнить массив из 100 элементов различными простыми числами
+
+var p = 2
+let n = 1000
+var foundCount = 0
+var resultPrime = Array(p...n)
+while p < n {
+    resultPrime.removeAll { (num: Int) -> Bool in
+        return num % p == 0 && num != p
+    }
+    guard let nextNum = resultPrime.first(where: {$0 > p}) else {
+        break
+    }
+    foundCount += 1
+    p = nextNum
+    if foundCount == 100
+    {
+        break
+    }
+}
+
+while resultPrime.count > 100 {
+    resultPrime.popLast()
+}
+
+for (index,primeNum) in resultPrime.enumerated() {
+    print("Prime number at index \(index) is:\(primeNum)")
+}
