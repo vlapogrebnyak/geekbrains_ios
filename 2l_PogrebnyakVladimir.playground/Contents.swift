@@ -54,9 +54,7 @@ func addFibonacciNumberToArray( array : inout [Decimal], numberIndex : Int )
         array.append(1)
     }
     else {
-        //let maxNum : UInt64 = 18446744073709551615;
         let nextNumber = finonacci(numberIndex_1: array[numberIndex - 1], numberIndex_2: array[numberIndex - 2])
-        //print(numberIndex, maxNum - nextNumber)
         array.append(nextNumber)
     }
 }
